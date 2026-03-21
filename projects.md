@@ -18,11 +18,12 @@
 ### Mini Bike
 - Short-lived project but learned a lot
 
-### Unnamed (4th Build)
-- Currently in progress
-
 ### "The Punisher" (3rd Go-Kart)
 - Black go-kart build with upgrades
+
+### Unnamed (4th Build)
+- Currently in progress
+- We have finished the frame
 
 ---
 
