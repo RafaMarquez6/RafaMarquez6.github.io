@@ -24,8 +24,8 @@
   mechanical planters and harvesters. 
 
 ## Skills
-- Languages: Python (learning), JavaScript (learning)
-- Tools: Git, GitHub, VS Code
+- Languages: Python (learning), JavaScript (learning), HTML (learning)
+- Tools: 3d modeling (Shapr3d), Welding
 
 ## Projects
 👉 [View all my projects](./projects.md)
