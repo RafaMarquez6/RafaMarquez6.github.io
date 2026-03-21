@@ -9,6 +9,7 @@
   <a href="./projects.md">Projects</a>
 </p>
 </h1>
+
 ##  About Me
 - High school student, junior
 - Interested in  mechanical engineering, computer science, economics, biology
