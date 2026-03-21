@@ -1,5 +1,6 @@
-## RafaMarquez6.github.io                           [Projects](./projects.md)
+## RafaMarquez6.github.io
 <p align="center">
+  < [Projects](./projects.md)>
   <img src="cropped_circle_image.png" width="200" />
 </p>
 
