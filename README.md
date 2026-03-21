@@ -2,7 +2,11 @@
 <p align="center">
   <img src="https://github.com/RafaMarquez6.png" width="200" />
 </p>
-# Hi, I'm Rafael 👋
+
+<p align='center'>
+  
+  ## Hi, I'm Rafael 👋
+</p>
 
 ##  About Me
 - High school student, junior
