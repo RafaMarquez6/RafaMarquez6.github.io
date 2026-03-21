@@ -9,7 +9,7 @@
 ### My First Go-Kart
 - Handed down to us by my eighth grade Engineering Teacher, Mr. Dyer
 - We disassembled the electric parts and the original steering system to make it our own
-- mounted our own gas engine and created our own steering system using parts from local hardware store
+- Mounted our own gas engine and created our own steering system using parts from local hardware store
 - Learned basics of assembly and mechanics
 
 ### 2nd Go-Kart
