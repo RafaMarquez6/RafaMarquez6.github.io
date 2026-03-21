@@ -5,15 +5,24 @@
 
 <p align="center">Hi, I'm Rafael 👋</p>
 <h1 align="center">
-<p align="center">
   <a href="./projects.md">Projects</a>
-</p>
 </h1>
 
+<p align="center">
 ##  About Me
 - High school student, junior
 - Interested in  mechanical engineering, computer science, economics, biology
 - Currently learning programming and problem-solving
+- Leader of the Belmont Wheel Club at Belmont High school. The club builds Go Karts to
+  extend our engineering prowress
+- I am most interested in mechanical engineering. But if it were to be broader, just
+  any engineering field is interesting to me
+- I love the feeling of figuring things out; I greatly enjoy being able to picture
+  something in my mind and then being able to translate it to a model or something that
+  I can actually make with my hands
+- Another aspect of mechanical engineering that I deeply enjoy is that it can be applied
+  to solve many real world problems, such as reducing labor effort in agriculture through
+  mechanical planters and harvesters. 
 
 ## Skills
 - Languages: Python (learning), JavaScript (learning)
@@ -32,8 +41,8 @@
 ## Goals
 - Build real-world projects
 - Improve coding skills
-- Learn more about tech + finance
-- learn more mechanical engineering
+- Learn more about tech + engineering
+</p>
 
 ## Contact
 - (rafaelmarquez0420@gmail.com)
