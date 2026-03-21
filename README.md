@@ -4,7 +4,9 @@
 </p>
 
 <p align="center"> Hi, I'm Rafael 👋</p>
-<p align="center"> [Projects](./projects.md) </p>
+<p align="center"> 
+  [projects](./projects.md)
+</p>
 
 ##  About Me
 - High school student, junior
