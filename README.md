@@ -1,2 +1,28 @@
 # RafaMarquez6.github.io
-About me
+# Hi, I'm Rafael 👋
+
+## 🚀 About Me
+- 🎓 High school student, junior
+- 💻 Interested in  mechanical engineering, computer science, economics, biology
+- 📚 Currently learning programming and problem-solving
+
+## 🧠 Skills
+- Languages: Python (learning), JavaScript (learning)
+- Tools: Git, GitHub, VS Code
+
+## 📂 Projects
+- Belmont Wheels club
+- My first Go kart
+- 2nd Go kart
+- Mini Bike (short lived)
+- Unamed (4th)
+- The punisher (black go kart 3rd)
+
+## 📈 Goals
+- Build real-world projects
+- Improve coding skills
+- Learn more about tech + finance
+- learn more mechanical engineering
+
+## 📫 Contact
+- (rafaelmarquez0420@gmail.com)
