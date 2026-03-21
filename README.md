@@ -3,10 +3,11 @@
   <img src="cropped_circle_image.png" width="200" />
 </p>
 
-<p align="center"> Hi, I'm Rafael 👋</p>
-<h1 align="center"> 
-  [projects](./projects.md)
-</h1>
+<p align="center">Hi, I'm Rafael 👋</p>
+<h1 align="center"></h1>
+<p align="center">
+  <a href="./projects.md">Projects</a>
+</p>
 
 ##  About Me
 - High school student, junior
