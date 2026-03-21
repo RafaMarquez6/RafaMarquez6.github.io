@@ -2,10 +2,6 @@
 
 ## Mechanical engineering
 
-### Belmont Wheels Club
-- I am the leader of the Belmont Wheels Club at Belmont High School. The club builds Go Karts
-  to expand our mechanical engineering prowess
-
 ### My First Go-Kart
 - Handed down to us by my eighth grade Engineering Teacher, Mr. Dyer
 - We disassembled the electric parts and the original steering system to make it our own
