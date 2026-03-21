@@ -4,16 +4,16 @@
 </p>
 # Hi, I'm Rafael 👋
 
-## 🚀 About Me
-- 🎓 High school student, junior
-- 💻 Interested in  mechanical engineering, computer science, economics, biology
-- 📚 Currently learning programming and problem-solving
+##  About Me
+- High school student, junior
+- Interested in  mechanical engineering, computer science, economics, biology
+- Currently learning programming and problem-solving
 
-## 🧠 Skills
+## Skills
 - Languages: Python (learning), JavaScript (learning)
 - Tools: Git, GitHub, VS Code
 
-## 📂 Projects
+## Projects
 👉 [View all my projects](./projects.md)
 - Belmont Wheels club
 - My first Go kart
@@ -22,11 +22,11 @@
 - Unamed (4th)
 - The punisher (black go kart 3rd)
 
-## 📈 Goals
+## Goals
 - Build real-world projects
 - Improve coding skills
 - Learn more about tech + finance
 - learn more mechanical engineering
 
-## 📫 Contact
+## Contact
 - (rafaelmarquez0420@gmail.com)
