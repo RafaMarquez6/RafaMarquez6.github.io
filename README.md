@@ -1,4 +1,7 @@
 # RafaMarquez6.github.io
+<p align="center">
+  <img src="profile.jpg" width="200" style="border-radius:50%;" />
+</p>
 # Hi, I'm Rafael 👋
 
 ## 🚀 About Me
@@ -11,6 +14,7 @@
 - Tools: Git, GitHub, VS Code
 
 ## 📂 Projects
+👉 [View all my projects](./projects.md)
 - Belmont Wheels club
 - My first Go kart
 - 2nd Go kart
