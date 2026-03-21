@@ -3,9 +3,8 @@
   <img src="https://github.com/RafaMarquez6.png" width="200" />
 </p>
 
-<p align='center'>
-  
-  ## Hi, I'm Rafael 👋
+<p align="center">
+  Hi, I'm Rafael 👋
 </p>
 
 ##  About Me
