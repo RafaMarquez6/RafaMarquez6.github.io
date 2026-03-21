@@ -4,11 +4,11 @@
 </p>
 
 <p align="center">Hi, I'm Rafael 👋</p>
-<h1 align="center"></h1>
+<h1 align="center">
 <p align="center">
   <a href="./projects.md">Projects</a>
 </p>
-
+</h1>
 ##  About Me
 - High school student, junior
 - Interested in  mechanical engineering, computer science, economics, biology
