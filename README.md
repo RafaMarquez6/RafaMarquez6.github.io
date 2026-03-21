@@ -1,4 +1,4 @@
-## RafaMarquez6.github.io
+## RafaMarquez6.github.io                           [Projects](./projects.md)
 <p align="center">
   <img src="https://github.com/RafaMarquez6.png" width="200" />
 </p>
