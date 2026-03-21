@@ -8,7 +8,6 @@
   <a href="./projects.md">Projects</a>
 </h1>
 
-<p align="center">
 ##  About Me
 - High school student, junior
 - Interested in  mechanical engineering, computer science, economics, biology
@@ -42,7 +41,6 @@
 - Build real-world projects
 - Improve coding skills
 - Learn more about tech + engineering
-</p>
 
 ## Contact
-- (rafaelmarquez0420@gmail.com)
+- rafaelmarquez0420@gmail.com
