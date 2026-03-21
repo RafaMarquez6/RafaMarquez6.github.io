@@ -1,6 +1,6 @@
 ## RafaMarquez6.github.io                           [Projects](./projects.md)
 <p align="center">
-  <img src="https://github.com/RafaMarquez6.png" width="200" />
+  <img src="cropped_circle_image.png" width="200" />
 </p>
 
 <p align="center">
