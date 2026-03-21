@@ -1,6 +1,6 @@
-# 🚀 My Projects
+# My Projects
 
-## 🛠️ Mechanical engineering
+## Mechanical engineering
 
 ### Belmont Wheels Club
 - I am the leader of the Belmont Wheels Club at Belmont High School. The club works builds Go Karts
