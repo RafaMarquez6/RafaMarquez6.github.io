@@ -1,6 +1,6 @@
 # RafaMarquez6.github.io
 <p align="center">
-  <img src="profile.jpg" width="200" style="border-radius:50%;" />
+  <img src="IMG_1564.jpg" width="200" style="border-radius:50%;" />
 </p>
 # Hi, I'm Rafael 👋
 
