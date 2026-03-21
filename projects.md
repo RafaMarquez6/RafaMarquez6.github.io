@@ -26,7 +26,7 @@
 
 ---
 
-## 💻 Future Tech Projects
+## Future Tech Projects
 - Coming soon...
 
 👉 [Home?](./README.md)
