@@ -1,5 +1,8 @@
 ## RafaMarquez6.github.io
 <p align="center">
+  <img src="Untitled design.png" width="100%" />
+</p>
+<p align="center">
   <img src="cropped_circle_image.png" width="200" />
 </p>
 
