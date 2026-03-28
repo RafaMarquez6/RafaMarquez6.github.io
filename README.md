@@ -10,7 +10,9 @@
 <h1 align="center">
   <a href="./projects.md">Projects</a>
 </h1>
-
+<p align="center">
+  <img src="Untitled design.png" width="100%" />
+</p>
 ##  About Me
 - High school student, junior
 - Interested in  mechanical engineering, computer science, economics, biology
