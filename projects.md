@@ -15,7 +15,7 @@
 - Short-lived project but learned a lot
 
 <p align="center">
-  <img src="The Punisher.png" height="250" />
+  <img src="The Punisher.png" width = "100%" />
 </p>
 
 ### Unnamed (4th Build)
