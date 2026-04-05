@@ -11,7 +11,7 @@
   <a href="./projects.md">Projects</a>
 </h1>
 <p align="center">
-  <img src="Aboutme_banner.png" width="100%" />
+  <img src="Aboutme_updated.png" width="100%" />
 </p>
 
 
