@@ -17,6 +17,10 @@
   <img src="The Punisher.png" width = "100%" />
 </p>
 
+<p align="center">
+  <img src="Third_gokart.png" width = "100%" />
+</p>
+
 ### Unnamed (4th Build)
 - Currently in progress
 - We have finished the frame
