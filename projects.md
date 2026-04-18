@@ -14,7 +14,7 @@
 - Short-lived project but learned a lot
 
 <p align="center">
-  <img src="The Punisher.png" width = "100%" />
+  <img src="ThePunisher2.png" width = "100%" />
 </p>
 
 <p align="center">
