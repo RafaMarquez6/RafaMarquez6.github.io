@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <img src="First_GoKart.png" width = "100%" />
+  <img src="First_GoKart(1).png" width = "100%" />
 </p>
 
 ### 2nd Go-Kart
