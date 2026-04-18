@@ -11,15 +11,28 @@
       color: #1a1a4a;
     }
 
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #1a1a4a;
+      font-size: 18px;
+    }
+
     .container {
-      width: 90%;
+      width: 85%;
+      max-width: 1200px;
       margin: auto;
-      padding-top: 40px;
+      padding-top: 20px;
     }
 
     h1 {
       text-align: center;
-      font-size: 40px;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
@@ -50,26 +63,24 @@
 
     .images img {
       width: 100%;
-      border-radius: 5px;
+      border-radius: 8px;
     }
 
     .timeline {
       text-align: center;
       margin-top: 40px;
-      font-size: 22px;
+      font-size: 20px;
     }
 
-    /* Navbar (top right like you wanted) */
-    .navbar {
-      display: flex;
-      justify-content: flex-end;
-      padding: 20px;
-    }
+    /* mobile fix */
+    @media (max-width: 800px) {
+      .content {
+        flex-direction: column;
+      }
 
-    .navbar a {
-      text-decoration: none;
-      color: #1a1a4a;
-      font-size: 18px;
+      .text, .images {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -82,65 +93,38 @@
 
   <div class="container">
 
-    <h1>“The Punisher” (The Third Go Kart)</h1>
+    <h1>“The Punisher” (Third Go-Kart)</h1>
     <div class="line"></div>
 
     <div class="content">
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
-}
 
-.text {
-  width: 38%;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-.images {
-  width: 58%;
-  display: flex;
-  gap: 20px;
-}https://github.com/RafaMarquez6/RafaMarquez6.github.io/blob/main/projects.html#L74C10
-
-.images img {
-  width: 48%;
-  border-radius: 8px;
-}
       <div class="text">
         <p>
-          We got this Go Kart and built it within the Belmont Wheels club. 
-          With my engineering teacher, Mr. Dyer, as the club advisor.
+          We built this Go-Kart in the Belmont Wheels club with my engineering teacher, Mr. Dyer.
         </p>
 
         <p>
-          This is a kit, we bought it from ‘Drift Hero’, an online store 
-          for mini vehicles such as minibikes and go karts.
+          It was purchased as a kit from Drift Hero, a store for mini vehicles.
         </p>
 
         <p>
-          We raised $2,564 for this Kart by going door to door throughout Belmont 
-          and asking for donations. In addition, Mr. Dyer sent emails to organizations 
-          and school parents to raise money.
+          We raised $2,564 through donations across Belmont and school outreach.
         </p>
 
         <p>
-          This was a great experience as I learned more about cooperation, 
-          suspension, and electric go kart components, which the previous go kart lacked.
+          I learned teamwork, suspension systems, and electrical components.
         </p>
       </div>
 
       <div class="images">
-        <img src="First_Gokart.png">
-        <img src="ThePunisher2.png">
+        <img src="punisher1.jpg">
+        <img src="punisher2.jpg">
       </div>
 
     </div>
 
     <div class="timeline">
-      Project Timeline: September–December, 2024
+      Project Timeline: September – December 2024
     </div>
 
   </div>
