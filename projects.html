@@ -2,133 +2,219 @@
 <html>
 <head>
   <title>Projects</title>
-
   <style>
     body {
       margin: 0;
-      background-color: #f5f5f5;
       font-family: Arial, sans-serif;
-      color: #1a1a4a;
     }
 
-    .navbar {
+    /* ── DARK SECTION (First Go Kart) ── */
+    .dark-section {
+      background-color: #0e0e2c;
+      color: #e8e6f0;
+      padding: 2.5rem 0 3rem;
+    }
+    .dark-section .navbar {
       display: flex;
-      justify-content: flex-end;
-      padding: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2.5rem 2rem;
+      border-bottom: 0.5px solid rgba(255,255,255,0.12);
+      margin-bottom: 2.5rem;
     }
-
-    .navbar a {
+    .dark-section .navbar .nav-name {
+      font-size: 17px;
+      font-weight: 500;
+      color: #fff;
+    }
+    .dark-section .navbar a {
       text-decoration: none;
-      color: #1a1a4a;
-      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .dark-section .navbar a:hover { color: #fff; }
+
+    .dark-section .container {
+      width: 85%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .dark-section h1 {
+      font-size: 28px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .dark-line {
+      width: 60%;
+      height: 0.5px;
+      background-color: rgba(255,255,255,0.2);
+      margin: 0 0 2rem 0;
+    }
+    .dark-section .content {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .dark-section .text {
+      width: 40%;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+    }
+    .dark-section .text p {
+      margin-bottom: 0.75rem;
+    }
+    .dark-section .images {
+      width: 60%;
+    }
+    .before-after-label {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 6px;
+    }
+    .before-after-label span {
+      width: 48%;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8b85d4;
+      text-align: center;
+    }
+    .dark-section .images .imgs {
+      display: flex;
+      gap: 20px;
+    }
+    .dark-section .images img {
+      width: 48%;
+      height: auto;
+      border-radius: 10px;
+      border: 0.5px solid rgba(255,255,255,0.15);
+    }
+    .dark-timeline {
+      margin-top: 1.5rem;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
     }
 
-    .container {
+    /* ── LIGHT SECTION (The Punisher) ── */
+    .light-section {
+      background-color: #f5f5f5;
+      color: #1a1a4a;
+      padding-top: 40px;
+    }
+    .light-section .container {
       width: 85%;
       max-width: 1200px;
       margin: auto;
       padding-top: 20px;
     }
-
-    h1 {
+    .light-section h1 {
       text-align: center;
       font-size: 36px;
       margin-bottom: 10px;
+      color: #1a1a4a;
     }
-
     .line {
       width: 60%;
       height: 3px;
       background-color: #1a1a4a;
       margin: 0 auto 40px auto;
     }
-
-    .content {
+    .light-section .content {
       display: flex;
       gap: 40px;
       align-items: flex-start;
     }
-
-    .text {
+    .light-section .text {
       width: 40%;
       font-size: 18px;
       line-height: 1.6;
     }
-
-    .images {
+    .light-section .images {
       width: 60%;
       display: flex;
       gap: 20px;
     }
-
-    .images img {
+    .light-section .images img {
       width: 48%;
       max-width: 400px;
       height: auto;
       border-radius: 8px;
     }
-
     .timeline {
       text-align: center;
       margin-top: 40px;
       font-size: 20px;
+      padding-bottom: 40px;
     }
 
-    /* mobile fix */
     @media (max-width: 800px) {
-      .content {
-        flex-direction: column;
-      }
-
-      .text, .images {
-        width: 100%;
-      }
+      .dark-section .content,
+      .light-section .content { flex-direction: column; }
+      .dark-section .text,
+      .dark-section .images,
+      .light-section .text,
+      .light-section .images { width: 100%; }
+      .before-after-label span { width: 48%; }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="navbar">
-    <a href="index.html">Home</a>
+  <!-- ── FIRST GO KART (dark) ── -->
+  <div class="dark-section">
+    <div class="navbar">
+      <span class="nav-name">Rafael Marquez</span>
+      <a href="index.html">Home</a>
+    </div>
+    <div class="container">
+      <h1>My First Go Kart</h1>
+      <div class="dark-line"></div>
+      <div class="content">
+        <div class="text">
+          <p>The entire Go Kart was handed down to me by my eighth grade engineering teacher, Mr. Dyer.</p>
+          <p>It was originally electric, but we stripped off all the electric parts and converted it to gas — replacing the motor and controller with a 212cc snow blower engine.</p>
+          <p>We created our own steering system using rods and a wheel from Amazon, welding the parts together with a welder funded through the Belmont Wheels Club.</p>
+          <p>We learned basic mechanics of cars such as rack and pinion steering systems, and core project building skills.</p>
+        </div>
+        <div class="images">
+          <div class="before-after-label">
+            <span>Before</span>
+            <span>After</span>
+          </div>
+          <div class="imgs">
+            <img src="firstgokart.png" alt="Go Kart before conversion">
+            <img src="firstgokart2.png" alt="Go Kart after conversion">
+          </div>
+        </div>
+      </div>
+      <div class="dark-timeline">Project Timeline: May – September 2024</div>
+    </div>
   </div>
 
-  <div class="container">
-
-    <h1>“The Punisher” (Third Go-Kart)</h1>
-    <div class="line"></div>
-
-    <div class="content">
-
-      <div class="text">
-        <p>
-          We built this Go-Kart in the Belmont Wheels club with my engineering teacher, Mr. Dyer.
-        </p>
-
-        <p>
-          It was purchased as a kit from Drift Hero, a store for mini vehicles.
-        </p>
-
-        <p>
-          We raised $2,564 through donations across Belmont and school outreach.
-        </p>
-
-        <p>
-          I learned teamwork, suspension systems, and electrical components.
-        </p>
+  <!-- ── THE PUNISHER (light) ── -->
+  <div class="light-section">
+    <div class="container">
+      <h1>"The Punisher" (Third Go-Kart)</h1>
+      <div class="line"></div>
+      <div class="content">
+        <div class="text">
+          <p>We built this Go-Kart in the Belmont Wheels club with my engineering teacher, Mr. Dyer.</p>
+          <p>It was purchased as a kit from Drift Hero, a store for mini vehicles.</p>
+          <p>We raised $2,564 through donations across Belmont and school outreach.</p>
+          <p>I learned teamwork, suspension systems, and electrical components.</p>
+        </div>
+        <div class="images">
+          <img src="ThePunisher2 (1).jpg">
+          <img src="ThePunisher (2).jpg">
+        </div>
       </div>
-
-      <div class="images">
-        <img src="ThePunisher2 (1).jpg">
-        <img src="ThePunisher (2).jpg">
-      </div>
-
+      <div class="timeline">Project Timeline: September – December 2024</div>
     </div>
-
-    <div class="timeline">
-      Project Timeline: September – December 2024
-    </div>
-
   </div>
 
 </body>
