@@ -1,51 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rafael Marquez</title>
-
   <style>
-    body {
-      margin: 0;
-      background-color: #0a192f;
-      color: white;
-      font-family: Arial, sans-serif;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0e0e2c; color: #e8e6f0; min-height: 100vh; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid rgba(255,255,255,0.12);
+      position: sticky; top: 0; background: #0e0e2c; z-index: 10;
+    }
+    .nav-name { font-size: 17px; font-weight: 500; letter-spacing: 0.02em; color: #fff; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+
+    .hero { padding: 5rem 2.5rem 4rem; max-width: 820px; margin: 0 auto; }
+    .hero-tag {
+      display: inline-block; font-size: 12px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #8b85d4; background: rgba(139,133,212,0.12);
+      border: 0.5px solid rgba(139,133,212,0.3);
+      border-radius: 20px; padding: 4px 12px; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 500;
+      line-height: 1.15; color: #ffffff; margin-bottom: 1rem;
+    }
+    .hero h1 span { color: #8b85d4; }
+    .hero-sub {
+      font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.55);
+      max-width: 540px; margin-bottom: 2rem;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 10px 22px; border-radius: 8px; background: #534AB7;
+      color: #fff; font-size: 14px; font-weight: 500; border: none;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #6259cc; }
+    .btn-ghost {
+      padding: 10px 22px; border-radius: 8px; background: transparent;
+      color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 500;
+      border: 0.5px solid rgba(255,255,255,0.25); cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+    .divider {
+      width: calc(100% - 5rem); margin: 0 2.5rem;
+      border: none; border-top: 0.5px solid rgba(255,255,255,0.1);
     }
 
-    .navbar {
-      display: flex;
-      justify-content: flex-end;
-      padding: 20px;
-      background-color: #0a192f;
+    .section { padding: 3.5rem 2.5rem; max-width: 820px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #8b85d4; margin-bottom: 1.5rem;
     }
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 18px;
+    .interests-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px;
+    }
+    .interest-card {
+      background: rgba(255,255,255,0.05);
+      border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1rem 1.1rem;
+    }
+    .interest-icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: rgba(139,133,212,0.18); display: flex;
+      align-items: center; justify-content: center;
+      margin-bottom: 10px; font-size: 14px;
+    }
+    .interest-card p { font-size: 14px; font-weight: 500; color: #e8e6f0; }
+    .interest-card span { font-size: 12px; color: rgba(255,255,255,0.45); }
+
+    .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-quote {
+      background: rgba(139,133,212,0.08);
+      border-left: 2px solid #534AB7;
+      border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;
+      font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.75); margin-bottom: 1rem;
+    }
+    .about-quote strong { color: #b8b4e8; font-weight: 500; }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 12px; padding: 1.25rem; margin-bottom: 12px;
+    }
+    .card h3 { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+    .card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+    .club-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 500; color: #8b85d4;
+      background: rgba(139,133,212,0.12); border-radius: 20px;
+      padding: 3px 10px; margin-bottom: 10px;
+    }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: #8b85d4; display: inline-block; }
+
+    footer {
+      text-align: center; padding: 2rem; font-size: 12px;
+      color: rgba(255,255,255,0.25); border-top: 0.5px solid rgba(255,255,255,0.08);
+      margin-top: 2rem;
     }
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      text-align: center;
-      margin-top: 100px;
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .hero { padding: 3rem 1.25rem 2.5rem; }
+      .section { padding: 2.5rem 1.25rem; }
+      .divider { width: calc(100% - 2.5rem); margin: 0 1.25rem; }
+      .about-body { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="navbar">
-    <a href="projects.html">Projects</a>
+  <nav>
+    <span class="nav-name">Rafael Marquez</span>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-tag">Belmont High School · Junior</div>
+    <h1>Engineer in the<br>making. <span>Builder at heart.</span></h1>
+    <p class="hero-sub">I love figuring things out — picturing something in my mind and making it real, whether that's a go-kart, a line of code, or a solution to a real-world problem.</p>
+    <div class="hero-btns">
+      <a href="projects.html"><button class="btn-primary">View my projects</button></a>
+      <a href="mailto:your@email.com"><button class="btn-ghost">Get in touch</button></a>
+    </div>
   </div>
 
-  <div class="container">
-    <h1>Rafael Marquez</h1>
-    <p>Building go-karts & learning engineering + code</p>
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Interests</div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="interest-icon">⚙️</div>
+        <p>Mechanical engineering</p>
+        <span>Primary focus</span>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">💻</div>
+        <p>Computer science</p>
+        <span>Currently learning</span>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">📈</div>
+        <p>Economics</p>
+        <span>Academic interest</span>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🔬</div>
+        <p>Biology</p>
+        <span>Academic interest</span>
+      </div>
+    </div>
   </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">About me</div>
+    <div class="about-body">
+      <div>
+        <div class="about-quote">
+          I love being able to <strong>picture something in my mind</strong> and then translate it into a model or something I can actually build with my hands.
+        </div>
+        <div class="about-quote">
+          Engineering isn't just theoretical to me — it can <strong>solve real-world problems</strong>, like reducing labor in agriculture through mechanical planters and harvesters.
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="club-badge"><span class="dot"></span> Leadership</div>
+          <h3>Belmont Wheel Club</h3>
+          <p>Leader of Belmont High School's engineering club. We design and build go-karts to develop hands-on engineering skills.</p>
+        </div>
+        <div class="card">
+          <h3>Currently learning</h3>
+          <p>Programming and problem-solving — applying a builder's mindset to software and computation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 Rafael Marquez · Belmont, MA</footer>
 
 </body>
 </html>
