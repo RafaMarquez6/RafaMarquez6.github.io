@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIT Sea Grant Internship</title>
+  <!-- Google's <model-viewer> lets visitors spin/zoom a 3D model (.glb file) -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0e0e2c; color: #e8e6f0; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid rgba(255,255,255,0.12);
+    }
+    .nav-name { font-size: 17px; font-weight: 500; color: #fff; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── Intro ── */
+    .intro { max-width: 1000px; margin: 0 auto; padding: 4rem 2.5rem 3rem; }
+    .label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #8b85d4; margin-bottom: 0.75rem;
+    }
+    .intro h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 500; color: #fff; margin-bottom: 1rem; }
+    .intro p { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 680px; margin-bottom: 0.75rem; }
+    .facts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.75rem; }
+    .fact {
+      background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 0.75rem 1rem; min-width: 160px;
+    }
+    .fact span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #8b85d4; margin-bottom: 4px; }
+    .fact strong { font-size: 14px; font-weight: 500; color: #fff; }
+
+    /* ── Project sections (same alternating style as the go kart page) ── */
+    .dark-section, .light-section { padding: 3.5rem 0; }
+    .dark-section { background: #0e0e2c; color: #e8e6f0; border-top: 0.5px solid rgba(255,255,255,0.08); }
+    .light-section { background: #f5f5f5; color: #1a1a4a; }
+    .container { width: 85%; max-width: 1200px; margin: auto; }
+    .container h2 { font-size: 28px; font-weight: 500; margin-bottom: 6px; }
+    .dark-section h2 { color: #fff; }
+    .bar { width: 60%; height: 3px; margin: 0 0 2rem 0; }
+    .dark-section .bar { background: #fff; }
+    .light-section .bar { background: #1a1a4a; }
+    .content { display: flex; gap: 40px; align-items: flex-start; }
+    .text { width: 45%; font-size: 15px; line-height: 1.7; }
+    .dark-section .text { color: rgba(255,255,255,0.65); }
+    .text p { margin-bottom: 0.75rem; }
+    .images { width: 55%; display: flex; flex-wrap: wrap; gap: 16px; }
+    .images img { width: 48%; height: auto; border-radius: 10px; }
+    .photo-slot {
+      width: 48%; aspect-ratio: 4 / 3; border-radius: 10px;
+      border: 2px dashed currentColor; opacity: 0.35;
+      display: flex; align-items: center; justify-content: center; font-size: 13px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .tag {
+      font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px;
+      color: #8b85d4; background: rgba(139,133,212,0.12);
+    }
+    .light-section .tag { color: #534AB7; background: rgba(83,74,183,0.1); }
+
+    /* ── 3D model viewer ── */
+    .model-box { width: 55%; }
+    model-viewer {
+      width: 100%; height: 380px; border-radius: 12px;
+      background: radial-gradient(circle at 50% 40%, #2a2766, #0e0e2c);
+      border: 0.5px solid rgba(255,255,255,0.15);
+      --poster-color: transparent;
+    }
+    .model-hint { font-size: 12px; text-align: center; margin-top: 8px; opacity: 0.55; }
+    .model-missing {
+      display: none; height: 380px; border-radius: 12px;
+      border: 2px dashed rgba(255,255,255,0.25); color: rgba(255,255,255,0.45);
+      align-items: center; justify-content: center; text-align: center; font-size: 14px; padding: 1rem;
+    }
+
+    .back { text-align: center; padding: 3rem 1rem; }
+    .back a {
+      display: inline-block; padding: 10px 22px; border-radius: 8px;
+      border: 0.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 14px;
+    }
+    .back a:hover { border-color: #fff; color: #fff; }
+
+    @media (max-width: 800px) {
+      nav { padding: 1rem 1.25rem; }
+      .intro { padding: 2.5rem 1.25rem 2rem; }
+      .content { flex-direction: column; }
+      .text, .images, .model-box { width: 100%; }
+      model-viewer, .model-missing { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Rafael Marquez</span>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
+  <!-- ── INTRO ── -->
+  <div class="intro">
+    <div class="label">MIT Internship</div>
+    <h1>MIT Sea Grant Internship</h1>
+    <p>I interned with MIT Sea Grant, which works on ocean engineering and underwater robotics. Day to day, I helped keep the robotics labs clean and running. On many days, and sometimes for whole weeks, I was given engineering tasks: Arduino coding, soldering, and a lot of CAD in Fusion 360.</p>
+    <p>Below are the projects I worked on.</p>
+    <div class="facts">
+      <div class="fact"><span>Program</span><strong>MIT Sea Grant</strong></div>
+      <div class="fact"><span>Focus</span><strong>Underwater robotics</strong></div>
+      <div class="fact"><span>Dates</span><strong>Summer 2026</strong></div>
+    </div>
+  </div>
+
+  <!-- ── PROJECT 1: SUBMARINE CONTROLLER (dark) ── -->
+  <div class="dark-section">
+    <div class="container">
+      <h2>Submarine Remote Controller</h2>
+      <div class="bar"></div>
+      <div class="content">
+        <div class="text">
+          <p>A class at MIT was learning to build pressure-sensing submarines, and they needed a remote controller to drive them.</p>
+          <p>I spent a full week on the controller in Fusion 360. I designed it, tested it, and redesigned it based on what worked and what didn't, going through several versions.</p>
+          <div class="tags">
+            <span class="tag">Fusion 360</span><span class="tag">CAD</span><span class="tag">Design iteration</span>
+          </div>
+        </div>
+        <div class="model-box">
+          <!-- To show your model: export it as controller.glb and upload it next to this file -->
+          <model-viewer id="controller-model" src="controller.glb" alt="3D model of the submarine remote controller"
+            camera-controls auto-rotate shadow-intensity="1" exposure="1.1"></model-viewer>
+          <div class="model-missing" id="controller-missing">3D model coming soon</div>
+          <div class="model-hint">Drag to spin · scroll or pinch to zoom</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROJECT 2: FISH IMPACT LOGGER (light) ── -->
+  <div class="light-section">
+    <div class="container">
+      <h2>Impact Logger for a Robotic Fish</h2>
+      <div class="bar"></div>
+      <div class="content">
+        <div class="text" style="width: 100%; max-width: 720px;">
+          <p>I helped an MIT undergraduate build an impact logger for a 10&nbsp;lb, 3D-printed fish. The logger records the g-forces the fish experiences.</p>
+          <p>The electronics ride inside the fish: an Arduino, a motor shield and an acceleration sensor.</p>
+          <p>I suggested which sensor to use and wrote the Arduino code that reads and logs the g-force data.</p>
+          <div class="tags">
+            <span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Data logging</span><span class="tag">Soldering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROJECT 3: RC TORPEDO (dark) ── -->
+  <div class="dark-section">
+    <div class="container">
+      <h2>Watertight Enclosure &amp; RC Torpedo</h2>
+      <div class="bar"></div>
+      <div class="content">
+        <div class="text">
+          <p>I was tasked with designing a 3D-printed container that stays watertight underwater, sealed with O-rings.</p>
+          <p>In my free time, I took the idea further and tried building a remote-controlled torpedo around the enclosure.</p>
+          <div class="tags">
+            <span class="tag">Fusion 360</span><span class="tag">O-ring sealing</span><span class="tag">3D printing</span><span class="tag">Side project</span>
+          </div>
+        </div>
+        <div class="images">
+          <img src="torpedo-full.jpg" alt="Assembled RC torpedo with green nose cone and black body">
+          <img src="torpedo-fins.jpg" alt="Close-up of the torpedo's 3D-printed fins and bolted end cap">
+          <img src="oring-endcaps.jpg" alt="3D-printed O-ring end caps in blue and white">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back"><a href="projects.html">← Back to all projects</a></div>
+
+  <script>
+    // If the .glb file isn't uploaded yet, show a "coming soon" box instead of an empty viewer
+    const viewer = document.getElementById('controller-model');
+    fetch(viewer.getAttribute('src'), { method: 'HEAD' }).then(r => {
+      if (!r.ok) throw new Error('missing');
+    }).catch(() => {
+      viewer.style.display = 'none';
+      document.getElementById('controller-missing').style.display = 'flex';
+    });
+  </script>
+
+</body>
+</html>
