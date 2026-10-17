@@ -80,6 +80,22 @@
       align-items: center; justify-content: center; text-align: center; font-size: 14px; padding: 1rem;
     }
 
+    /* ── Impact logger details ── */
+    .logger-intro { max-width: 760px; font-size: 15px; line-height: 1.7; }
+    .logger-intro p { margin-bottom: 0.75rem; }
+    .sub-head { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #534AB7; margin: 2rem 0 1rem; }
+    .parts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 760px; }
+    .part { background: #fff; border: 1px solid rgba(26,26,74,0.1); border-radius: 12px; padding: 1rem 1.1rem; }
+    .part h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .part p { font-size: 14px; line-height: 1.55; color: rgba(26,26,74,0.75); }
+    .steps { list-style: none; counter-reset: step; max-width: 760px; }
+    .steps li { counter-increment: step; position: relative; padding: 0 0 1rem 2.6rem; font-size: 15px; line-height: 1.6; }
+    .steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 0;
+      width: 28px; height: 28px; border-radius: 50%; background: #534AB7; color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;
+    }
+
     .back { text-align: center; padding: 3rem 1rem; }
     .back a {
       display: inline-block; padding: 10px 22px; border-radius: 8px;
@@ -92,6 +108,7 @@
       .intro { padding: 2.5rem 1.25rem 2rem; }
       .content { flex-direction: column; }
       .text, .images, .model-box { width: 100%; }
+      .parts { grid-template-columns: 1fr; }
       model-viewer, .model-missing { height: 300px; }
     }
   </style>
@@ -148,15 +165,41 @@
     <div class="container">
       <h2>Impact Logger for a Robotic Fish</h2>
       <div class="bar"></div>
-      <div class="content">
-        <div class="text" style="width: 100%; max-width: 720px;">
-          <p>I helped an MIT undergraduate build an impact logger for a 10&nbsp;lb, 3D-printed fish. The logger records the g-forces the fish experiences.</p>
-          <p>The electronics ride inside the fish: an Arduino, a motor shield and an acceleration sensor.</p>
-          <p>I suggested which sensor to use and wrote the Arduino code that reads and logs the g-force data.</p>
-          <div class="tags">
-            <span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Data logging</span><span class="tag">Soldering</span>
-          </div>
+      <div class="logger-intro">
+        <p>I helped an MIT undergraduate build an impact logger for a 10&nbsp;lb, 3D-printed fish. The electronics sit inside the fish and record how hard it hits when it's dropped.</p>
+        <p>The first sensor, an AltIMU-10 v3, could only measure up to ±16g, which isn't enough for a hard impact. I suggested replacing it with the <strong>Adafruit ADXL375</strong>, which measures up to <strong>±200g</strong>, and wrote the Arduino code that records and displays the data.</p>
+      </div>
+
+      <h3 class="sub-head">The parts</h3>
+      <div class="parts">
+        <div class="part">
+          <h4>ADXL375 accelerometer</h4>
+          <p>Measures acceleration on three axes, up to ±200g. Wired to the Arduino's I2C pins.</p>
         </div>
+        <div class="part">
+          <h4>Arduino Uno R4 WiFi</h4>
+          <p>Runs the code and creates its own WiFi network, so no router or internet is needed.</p>
+        </div>
+        <div class="part">
+          <h4>GPS + logging shield</h4>
+          <p>Saves every recording to an SD card and tags each session with the last GPS location.</p>
+        </div>
+        <div class="part">
+          <h4>Magnetic switch</h4>
+          <p>Closing the box starts a recording, so nobody has to press a button.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-head">How a test works</h3>
+      <ol class="steps">
+        <li><strong>Trigger.</strong> Close the magnetic switch, or click <em>Trigger Recording</em> on the logger's webpage.</li>
+        <li><strong>Record.</strong> After a 3-second delay, the board records every sensor reading for 7 seconds, with no filtering.</li>
+        <li><strong>Save.</strong> Each reading is written straight to its own file on the SD card (REC001.CSV, REC002.CSV and so on). The board's memory can't hold 7 seconds of data, so the card is required.</li>
+        <li><strong>View.</strong> A laptop joins the board's WiFi and opens its webpage. The page shows a graph, the raw numbers and the biggest change in force. You can switch between recordings or delete them.</li>
+      </ol>
+
+      <div class="tags">
+        <span class="tag">Arduino</span><span class="tag">I2C sensors</span><span class="tag">WiFi web server</span><span class="tag">SD data logging</span><span class="tag">Soldering</span>
       </div>
     </div>
   </div>
