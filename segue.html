@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segue</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0e0e2c; color: #e8e6f0; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 0.5px solid rgba(255,255,255,0.12);
+    }
+    .nav-name { font-size: 17px; font-weight: 500; color: #fff; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── Intro ── */
+    .intro { max-width: 1000px; margin: 0 auto; padding: 4rem 2.5rem 3rem; }
+    .label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #e05a8a; margin-bottom: 0.75rem;
+    }
+    .intro h1 {
+      font-size: clamp(2.6rem, 7vw, 4rem); font-weight: 800; margin-bottom: 1rem;
+      background: linear-gradient(90deg, #e05a8a, #8b85d4);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .intro p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.65); max-width: 700px; margin-bottom: 0.75rem; }
+    .facts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.75rem; }
+    .fact {
+      background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 0.75rem 1rem; min-width: 160px;
+    }
+    .fact span { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #e05a8a; margin-bottom: 4px; }
+    .fact strong { font-size: 14px; font-weight: 500; color: #fff; }
+
+    /* ── Screenshots ── */
+    .shots { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .shots figure { margin: 0; }
+    .shots img { width: 100%; height: auto; border-radius: 12px; border: 0.5px solid rgba(255,255,255,0.15); display: block; }
+    .shots figcaption { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 8px; text-align: center; }
+
+    /* ── Light section ── */
+    .light-section { background: #f5f5f5; color: #1a1a4a; padding: 3.5rem 0; }
+    .container { width: 85%; max-width: 1000px; margin: auto; }
+    .container h2 { font-size: 28px; font-weight: 500; margin-bottom: 6px; }
+    .bar { width: 60%; height: 3px; background: #1a1a4a; margin: 0 0 2rem 0; }
+    .sub-head { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #c2185b; margin: 2rem 0 1rem; }
+    .sub-head:first-of-type { margin-top: 0; }
+    .steps { list-style: none; counter-reset: step; max-width: 760px; }
+    .steps li { counter-increment: step; position: relative; padding: 0 0 1rem 2.6rem; font-size: 15px; line-height: 1.6; }
+    .steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 0;
+      width: 28px; height: 28px; border-radius: 50%; background: #c2185b; color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600;
+    }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .card { background: #fff; border: 1px solid rgba(26,26,74,0.1); border-radius: 12px; padding: 1rem 1.1rem; }
+    .card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .card p { font-size: 14px; line-height: 1.55; color: rgba(26,26,74,0.75); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; }
+    .tag { font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; color: #c2185b; background: rgba(194,24,91,0.08); }
+
+    .back { text-align: center; padding: 3rem 1rem; }
+    .back a {
+      display: inline-block; padding: 10px 22px; border-radius: 8px;
+      border: 0.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); font-size: 14px;
+    }
+    .back a:hover { border-color: #fff; color: #fff; }
+
+    @media (max-width: 800px) {
+      nav { padding: 1rem 1.25rem; }
+      .intro { padding: 2.5rem 1.25rem 2rem; }
+      .shots { grid-template-columns: 1fr; padding: 0 1.25rem 2.5rem; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Rafael Marquez</span>
+    <div class="nav-links">
+      <a href="index.html">About</a>
+      <a href="projects.html">Projects</a>
+    </div>
+  </nav>
+
+  <!-- ── INTRO ── -->
+  <div class="intro">
+    <div class="label">Web game</div>
+    <h1>Segue</h1>
+    <p>Segue is a daily music game I designed, like Wordle but for playlists. Every day you get a start song and an end song that sound nothing alike. Your job is to build a playlist that blends smoothly from one to the other.</p>
+    <p>I built it with help from Claude, an AI assistant. It started as a prototype and grew into a full website with accounts and a daily leaderboard.</p>
+    <div class="facts">
+      <div class="fact"><span>Type</span><strong>Daily web game</strong></div>
+      <div class="fact"><span>Songs on the map</span><strong>181 hand-placed</strong></div>
+      <div class="fact"><span>Status</span><strong>In development</strong></div>
+    </div>
+  </div>
+
+  <!-- ── SCREENSHOTS ── -->
+  <div class="shots">
+    <figure>
+      <img src="segue-start.jpg" alt="Segue home screen showing the daily puzzle and the sound map">
+      <figcaption>The daily puzzle before the clock starts</figcaption>
+    </figure>
+    <figure>
+      <img src="segue-playing.jpg" alt="Segue mid-game: a playlist from Iron Man toward Flowers, drawn as a path on the sound map">
+      <figcaption>Blending Iron Man into Flowers, one song at a time</figcaption>
+    </figure>
+  </div>
+
+  <!-- ── HOW IT WORKS (light) ── -->
+  <div class="light-section">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="bar"></div>
+
+      <h3 class="sub-head">How to play</h3>
+      <ol class="steps">
+        <li><strong>Get today's pair.</strong> Everyone gets the same start and end song each day, like <em>Iron Man</em> by Black Sabbath to <em>Flowers</em> by Miley Cyrus.</li>
+        <li><strong>Beat the clock.</strong> You have 3 minutes to add 3 to 8 songs in between.</li>
+        <li><strong>Score smooth steps.</strong> Each song is a dot on the sound map. Small steps toward the end song score high, and big jumps or steps backward lose points.</li>
+        <li><strong>Compare.</strong> Your run goes on the daily leaderboard, with a bonus for picking songs nobody else chose.</li>
+      </ol>
+
+      <h3 class="sub-head">What's under the hood</h3>
+      <div class="cards">
+        <div class="card">
+          <h4>The sound map</h4>
+          <p>Every song sits on a two-axis map: guitars to synths, and gentle to heavy. Genres like Metal, Pop, EDM and Folk each have their own region.</p>
+        </div>
+        <div class="card">
+          <h4>A growing song catalog</h4>
+          <p>Right now, 181 songs are placed on the map by hand. Next, Python scripts will collect songs from Billboard charts and music databases and score each one's position ahead of time, so the game runs fast with no AI while people play.</p>
+        </div>
+        <div class="card">
+          <h4>Accounts and leaderboard</h4>
+          <p>Players sign in, pick a DJ name, earn holiday badges and see the daily board, all through a Supabase database.</p>
+        </div>
+        <div class="card">
+          <h4>Extra modes</h4>
+          <p><em>Hard Cut</em> is a risky move for bonus points, and <em>Infinite</em> mode lets you keep playing new pairs. Missing songs can be requested and get added every week.</p>
+        </div>
+      </div>
+
+      <div class="tags">
+        <span class="tag">HTML / CSS / JavaScript</span><span class="tag">Python</span><span class="tag">Supabase</span><span class="tag">Claude API</span><span class="tag">Game design</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="back"><a href="projects.html">← Back to all projects</a></div>
+
+</body>
+</html>
