@@ -66,6 +66,15 @@
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2rem; }
     .tag { font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; color: #c2185b; background: rgba(194,24,91,0.08); }
 
+    .play-btn {
+      display: inline-block; margin-top: 0.75rem; padding: 12px 24px; border-radius: 10px;
+      background: linear-gradient(90deg, #e05a8a, #8b85d4); color: #fff; font-size: 15px; font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .play-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,90,138,0.35); }
+    .cta { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(26,26,74,0.1); text-align: center; }
+    .cta p { font-size: 16px; margin-bottom: 0.5rem; }
+
     .back { text-align: center; padding: 3rem 1rem; }
     .back a {
       display: inline-block; padding: 10px 22px; border-radius: 8px;
@@ -93,26 +102,27 @@
 
   <!-- ── INTRO ── -->
   <div class="intro">
-    <div class="label">Web game</div>
+    <div class="label">Web game · Live</div>
     <h1>Segue</h1>
     <p>Segue is a daily music game I designed, like Wordle but for playlists. Every day you get a start song and an end song that sound nothing alike. Your job is to build a playlist that blends smoothly from one to the other.</p>
-    <p>I built it with help from Claude, an AI assistant. It started as a prototype and grew into a full website with accounts and a daily leaderboard.</p>
+    <p>I built it with help from Claude, an AI assistant. It started as a prototype and is now a live website with accounts, a daily leaderboard, almost 70,000 songs and a paid Premium tier.</p>
+    <a class="play-btn" href="https://seguedaily.com" target="_blank" rel="noopener">Play it at seguedaily.com →</a>
     <div class="facts">
       <div class="fact"><span>Type</span><strong>Daily web game</strong></div>
-      <div class="fact"><span>Songs on the map</span><strong>181 hand-placed</strong></div>
-      <div class="fact"><span>Status</span><strong>In development</strong></div>
+      <div class="fact"><span>Songs on the map</span><strong>69,794</strong></div>
+      <div class="fact"><span>Status</span><strong>Live at seguedaily.com</strong></div>
     </div>
   </div>
 
   <!-- ── SCREENSHOTS ── -->
   <div class="shots">
     <figure>
-      <img src="segue-start.jpg" alt="Segue home screen showing the daily puzzle and the sound map">
-      <figcaption>The daily puzzle before the clock starts</figcaption>
+      <img src="segue-home.jpg" alt="Segue landing page with the logo, Play Today's Mix button and the sound map">
+      <figcaption>The landing page, with today's pair waiting below the sound map</figcaption>
     </figure>
     <figure>
-      <img src="segue-playing.jpg" alt="Segue mid-game: a playlist from Iron Man toward Flowers, drawn as a path on the sound map">
-      <figcaption>Blending Iron Man into Flowers, one song at a time</figcaption>
+      <img src="segue-howto.jpg" alt="Segue's illustrated How to Play screen with six picture cards">
+      <figcaption>The illustrated "How to play" guide</figcaption>
     </figure>
   </div>
 
@@ -124,34 +134,48 @@
 
       <h3 class="sub-head">How to play</h3>
       <ol class="steps">
-        <li><strong>Get today's pair.</strong> Everyone gets the same start and end song each day, like <em>Iron Man</em> by Black Sabbath to <em>Flowers</em> by Miley Cyrus.</li>
-        <li><strong>Beat the clock.</strong> You have 3 minutes to add 3 to 8 songs in between.</li>
-        <li><strong>Score smooth steps.</strong> Each song is a dot on the sound map. Small steps toward the end song score high, and big jumps or steps backward lose points.</li>
-        <li><strong>Compare.</strong> Your run goes on the daily leaderboard, with a bonus for picking songs nobody else chose.</li>
+        <li><strong>Get today's pair.</strong> Everyone gets the same start and end song each day. The pair stays hidden until you start the clock.</li>
+        <li><strong>Build the bridge.</strong> You have 3 minutes to add 3 to 8 songs in between. Picks are final, and you get one run per day.</li>
+        <li><strong>Small steps score big.</strong> Each song is a dot on the sound map. Each transition scores up to 100 points depending on how close the two songs are, and going the wrong way costs 25.</li>
+        <li><strong>Spin the records.</strong> Every transition drops a little vinyl record colored by how smooth it was. Your row of records is what you share with friends.</li>
+        <li><strong>Or gamble on a Hard Cut.</strong> Make every step a huge jump that still lands closer to the end, and you can score up to 750. One smooth step ruins it.</li>
       </ol>
 
-      <h3 class="sub-head">What's under the hood</h3>
+      <h3 class="sub-head">What I built</h3>
       <div class="cards">
         <div class="card">
-          <h4>The sound map</h4>
-          <p>Every song sits on a two-axis map: guitars to synths, and gentle to heavy. Genres like Metal, Pop, EDM and Folk each have their own region.</p>
+          <h4>The sound map and the DJ</h4>
+          <p>Every song sits on a two-axis map: guitars to synths, and gentle to heavy. A little DJ character in Segue pink hops along your route as you add songs.</p>
         </div>
         <div class="card">
-          <h4>A growing song catalog</h4>
-          <p>Right now, 181 songs are placed on the map by hand. Next, Python scripts will collect songs from Billboard charts and music databases and score each one's position ahead of time, so the game runs fast with no AI while people play.</p>
+          <h4>A 69,794-song catalog</h4>
+          <p>Python scripts collected songs from Billboard charts and music databases. Claude placed about 69,600 of them on the map in one batch run for about $1.50, then re-checked the 22,000 most questionable placements.</p>
         </div>
         <div class="card">
           <h4>Accounts and leaderboard</h4>
-          <p>Players sign in, pick a DJ name, earn holiday badges and see the daily board, all through a Supabase database.</p>
+          <p>Players sign in with a password or a 6-digit emailed code, pick a DJ name, earn holiday badges and compete on the daily board, all stored in a Supabase database.</p>
         </div>
         <div class="card">
-          <h4>Extra modes</h4>
-          <p><em>Hard Cut</em> is a risky move for bonus points, and <em>Infinite</em> mode lets you keep playing new pairs. Missing songs can be requested and get added every week.</p>
+          <h4>Premium for $3</h4>
+          <p>A one-time $3 Stripe payment unlocks <em>Infinite</em> mode, with unlimited new pairs, and lets you customize your DJ's body, color, headphones, hat and shades.</p>
+        </div>
+        <div class="card">
+          <h4>Players can challenge scores</h4>
+          <p>If a transition's score seems wrong, players flag it and say why. Every night, an automated job has Claude review the challenges and move misplaced songs.</p>
+        </div>
+        <div class="card">
+          <h4>Hosting and email</h4>
+          <p>The site runs on Cloudflare at its own domain, seguedaily.com, and sends sign-in emails from its own address through Resend.</p>
         </div>
       </div>
 
       <div class="tags">
-        <span class="tag">HTML / CSS / JavaScript</span><span class="tag">Python</span><span class="tag">Supabase</span><span class="tag">Claude API</span><span class="tag">Game design</span>
+        <span class="tag">HTML / CSS / JavaScript</span><span class="tag">Python</span><span class="tag">Supabase</span><span class="tag">Stripe</span><span class="tag">Cloudflare</span><span class="tag">GitHub Actions</span><span class="tag">Claude API</span><span class="tag">Game design</span>
+      </div>
+
+      <div class="cta">
+        <p>Try today's mix. There's a new pair every day at midnight.</p>
+        <a class="play-btn" href="https://seguedaily.com" target="_blank" rel="noopener">Play Segue →</a>
       </div>
     </div>
   </div>
